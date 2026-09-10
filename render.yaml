@@ -28,15 +28,13 @@ services:
       - key: APP_SEED_DEMO_DATA
         value: "true"
 
-  # 2. React Vite Frontend Static Site
+  # 2. React Vite Frontend Static Site (Global CDN)
   - type: web
     name: campuscash-frontend
     env: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
-    plan: free
-    region: oregon
     branch: main
     routes:
       - type: rewrite
@@ -48,7 +46,6 @@ services:
           type: web
           name: campuscash-backend
           property: host
-          path: /api
 
 # 3. Free Managed PostgreSQL Database
 databases:
