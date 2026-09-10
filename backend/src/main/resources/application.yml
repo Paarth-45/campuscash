@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
   servlet:
     context-path: /
 
@@ -70,7 +70,7 @@ spring:
       on-profile: prod
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres:5432/campuscash}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://${POSTGRES_HOST:postgres}:${POSTGRES_PORT:5432}/${POSTGRES_DB:campuscash}}
     username: ${POSTGRES_USER:campuscash_admin}
     password: ${POSTGRES_PASSWORD:cc_prod_sec_7a8f902b1c4e}
     driver-class-name: org.postgresql.Driver
