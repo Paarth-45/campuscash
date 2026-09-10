@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] text-slate-800 dark:bg-[#0b1120] dark:text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white;
+    min-height: 100vh;
+  }
+}
+
+/* Card Style exactly matching mockup */
+.app-card {
+  @apply bg-white dark:bg-[#151f32] border border-slate-100 dark:border-slate-800/80 rounded-2xl shadow-sm transition-all duration-200;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
